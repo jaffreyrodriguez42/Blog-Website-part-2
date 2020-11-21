@@ -48,8 +48,9 @@ app.post('/compose', function(req, res){
 
 app.get('/posts/:postName', function(req, res){
 	let requestedTitle = req.params.postName;
+	requestedTitle = _.lowerCase(requestedTitle);
 	posts.forEach(function(post){
-		if(_.lowerCase(post.postTitle) === _.lowerCase(requestedTitle)){
+		if(_.lowerCase(post.postTitle) === requestedTitle){
 			// console.log("Match Found!");
 			res.render('post', {postTitle: post.postTitle, postBody: post.postBody});
 		}
