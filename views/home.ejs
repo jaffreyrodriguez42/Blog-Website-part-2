@@ -4,5 +4,16 @@
 
 <p><%= homeStartingContent %></p>
 
+<h2>Posts</h2>
+
+<% if(posts.length == 0){ %>
+	<h4>There is no post available.</h4>
+<% }else{ %>
+	<% posts.forEach(function(post){ %>
+		<h4><%= post.postTitle %></h4>
+		<p><%= post.postBody %></p>
+	<% }); %>
+<% } %>
+
 <%- include("partials/footer") -%>
 
