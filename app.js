@@ -59,6 +59,8 @@ app.post('/compose', function(req, res){
 	});
 
 	blog.save();
+
+	res.redirect("/");
 });
 
 app.get('/posts/:postId', function(req, res){
