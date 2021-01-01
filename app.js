@@ -6,7 +6,7 @@ const ejs = require("ejs");
 const _ = require('lodash');
 const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost:27017/blogDB', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://admin-jaf:test1234@cluster0.ngxtc.mongodb.net/blogDB', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const blogSchema = ({
 	title: String,
@@ -72,20 +72,11 @@ app.get('/posts/:postId', function(req, res){
 	});
 });
 
+let port = process.env.PORT;
+if(port == null || port == ""){
+	port = 3000;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+app.listen(port, function() {
+  console.log("Server has started successfully!");
 });
