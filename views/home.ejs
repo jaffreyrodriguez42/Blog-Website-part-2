@@ -10,11 +10,11 @@
 	<h4>There is no post available.</h4>
 <% }else{ %>
 	<% posts.forEach(function(post){ %>
-		<% let postTitle = post.postTitle; %>
+		<% let postTitle = post.title; %>
 		<h4><%= postTitle %></h4>
-		<% let postBody = post.postBody; %>
+		<% let postBody = post.body; %>
 		<% let postBodyTrimmed = postBody.substr(0, 99); %>
-		<p><%= postBodyTrimmed + " ..."%><a href="/posts/<%= postTitle%>"> Read More</a></p>
+		<p><%= postBodyTrimmed + " ..."%><a href="/posts/<%= post._id%>"> Read More</a></p>
 
 	<% }); %>
 <% } %>
